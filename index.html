@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="signup"><img src="peakpx.jpg">
+            <p class="txt">Sign up</p>
+        </div>
+        <form class="form" action="/submit-form" method="post">
+            <label for="name">Username</label><br>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="Email">
+
+            <label for="pass1">Password</label><br>
+            <input type="password" id="pass1" name="password" required oninput="passConfirm()>
+
+            <label for="pass2">Repeat password</label><br>
+            <input type="password" id="pass2" name="password" required oninput="passConfirm()">
+
+            <button class="submit">Create account</button>
+        </form>
+    </div>
+
+    <script>
+        const passConfirm = function() {
+            const pass1 = document.getElementById('pass1')
+            const pass2 = document.getElementById('pass2')
+
+            if (pass1.value === pass2.value) {
+                pass1.style.borderColor = 'Green'
+                pass2.style.borderColor = 'Green'
+            }else {
+                pass1.style.borderColor = 'Red'
+                pass2.style.borderColor = 'Red'
+            }
+        }
+    </script>
+</body>
+</html>
